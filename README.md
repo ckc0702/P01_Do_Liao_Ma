@@ -24,7 +24,7 @@ Backend
 
 # HOW TO RUN PROJECT 
 1. Ensure that backend is running (spring boot - localhost:8080 restful-web-services)
-2. cd to project directory, then enter command <ng serve>
+2. cd to project directory, then enter command : ng serve
   
 # RUNNING BACKEND 
 1. Open restful-web-services as maven project in eclipse ide
