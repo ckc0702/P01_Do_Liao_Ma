@@ -1,5 +1,6 @@
 <script src="assets/js/main.js"></script>
 
+<app-menu [APP_TITLE]="APP_TITLE"></app-menu>
 <div class="background">
     <div class="bubbles">
         <span style="--i:11;"></span>
@@ -56,12 +57,12 @@
         <span style="--i:13;"></span>
         <span style="--i:28;"></span>
     </div>
-    <app-menu [APP_TITLE]="APP_TITLE"></app-menu>
     <div class="wrapper">
         <router-outlet (activate)="onOutletLoaded($event)" ></router-outlet>
     </div>
-    <app-footer></app-footer>
 </div>
+ <app-footer></app-footer>
+
 
 
 
