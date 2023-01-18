@@ -1,14 +1,14 @@
 # p-1-todo-web-app
 Frontend : Angular, Backend : Spring Boot, JPA, and Hibernate, DB : H2
 
-## VERSIONING ##
+# VERSIONING 
 (12/2/2022) 
 1. Angular CLI  : 15.0.4 
 2. Spring Boot  : v2.6.14-SNAPSHOT  (24 Nov, 2022 release - newer version available)
 3. Node JS      : v18.12.0 
 4. JWT 			: v0.9.1
 
-## ENVIRONMENT CONFIGURATION ##
+# ENVIRONMENT CONFIGURATION 
 1. Frontend
 > Download visual studio code
 > Install node js
@@ -22,15 +22,15 @@ Frontend : Angular, Backend : Spring Boot, JPA, and Hibernate, DB : H2
 > Download eclipse and import generated proj 
 > File > import > existing maven projects
 
-## HOW TO RUN PROJECT ## 
+# HOW TO RUN PROJECT 
 1. Ensure that backend is running (spring boot - localhost:8080 restful-web-services)
 2. cd to project directory, then enter command <ng serve>
   
-# RUNNING BACKEND ##
+# RUNNING BACKEND 
 1. Open restful-web-services as maven project in eclipse ide
 2. Right click RestfulWebServicesApplication.java file and run as java application
 
-## SUPPORTED RESOLUTION ##
+# SUPPORTED RESOLUTION 
 768x1024		
 768x1280		
 800x480		
