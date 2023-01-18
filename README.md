@@ -1,5 +1,5 @@
 # p-1-todo-web-app
-Frontend : Angular, Backend : Spring Boot, JPA, and Hibernate, DB : H2
+A basic todo web application using Frontend : Angular, Backend : Spring Boot, JPA, and Hibernate, DB : H2
 
 # VERSIONING 
 (12/2/2022) 
