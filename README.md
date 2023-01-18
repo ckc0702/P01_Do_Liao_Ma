@@ -8,6 +8,9 @@ A basic todo web application using Frontend : Angular, Backend : Spring Boot, JP
 3. Node JS      : v18.12.0 
 4. JWT 			: v0.9.1
 
+# APPLICATION VERSION
+v0.1
+
 # ENVIRONMENT CONFIGURATION 
 Frontend
 1. Download visual studio code
