@@ -9,18 +9,18 @@ Frontend : Angular, Backend : Spring Boot, JPA, and Hibernate, DB : H2
 4. JWT 			: v0.9.1
 
 # ENVIRONMENT CONFIGURATION 
-1. Frontend
-> Download visual studio code
-> Install node js
-> Check with cmd : node -v and npm -v
-> Cmd to install angular : npm install -g @angular/cli or npm install -g @angular/cli@<version>
-> Cmd to check angular version : ng version
+Frontend
+1. Download visual studio code
+2. Install node js
+3. Check with cmd : node -v and npm -v
+4. Cmd to install angular : npm install -g @angular/cli or npm install -g @angular/cli@<version>
+5. Cmd to check angular version : ng version
 
-2. Backend
-> Go to link https://start.spring.io/
-> Generate a maven project - maven proj, spring boot version >2.0.0 (snapshot), jar packaging, dependencies = web, devtools, jpa sql, h2 db
-> Download eclipse and import generated proj 
-> File > import > existing maven projects
+Backend
+1. Go to link https://start.spring.io/
+2. Generate a maven project - maven proj, spring boot version >2.0.0 (snapshot), jar packaging, dependencies = web, devtools, jpa sql, h2 db
+3. Download eclipse and import generated proj 
+4. File > import > existing maven projects
 
 # HOW TO RUN PROJECT 
 1. Ensure that backend is running (spring boot - localhost:8080 restful-web-services)
