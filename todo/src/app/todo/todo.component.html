@@ -1,0 +1,46 @@
+<div class="container">
+    <!-- <div class="alert alert-warning" *ngIf="todoForm.invalid && todoForm.dirty">Please Fill In Required Field</div> -->
+    <!-- <div class="alert alert-warning" *ngIf="todoForm.invalid && todoForm.dirty && description.invalid">Description Is Required</div>
+    <div class="alert alert-warning" *ngIf="todoForm.invalid && todoForm.dirty && start_date.invalid">Start Date Is Required</div>
+    <div class="alert alert-warning" *ngIf="todoForm.invalid && todoForm.dirty && due_date.invalid">Target Date Is Required</div> -->
+
+    <form (ngSubmit)="todoForm.valid && saveTodo()" #todoForm="ngForm">
+        <fieldset class="form-group">
+            <label class="input-label">Description<span class="text-danger"> *</span></label>
+            <input type="text" class="form-control input-field" name="description" [(ngModel)]="todo.description" #description="ngModel" placeholder="Enter Todo Description Here" required>
+            <mat-hint class="text-danger" *ngIf="todoForm.invalid && todoForm.dirty && description.invalid">*So what's your todo, you can't have nothing as todo</mat-hint>
+        </fieldset>
+        
+        <fieldset class="form-group input-top-down">
+            <label class="input-label ">Start Date<span class="text-danger"> *</span></label>
+            <input type="date" class="form-control input-field" name="start_date" [ngModel]="todo.startDate | date:'yyyy-MM-dd' " (ngModelChange)="todo.startDate = $event" #start_date="ngModel" required>
+            <mat-hint class="text-danger" *ngIf="todoForm.invalid && todoForm.dirty && start_date.invalid">*You can't have a todo without a date!</mat-hint>
+        </fieldset>
+
+        <fieldset class="form-group input-top-down">
+            <label class="input-label">Target Date<span class="text-danger"> *</span></label>
+            <input type="date" class="form-control input-field" name="due_date" [ngModel]="todo.targetDate | date:'yyyy-MM-dd' " (ngModelChange)="todo.targetDate = $event" #due_date="ngModel" required>
+            <mat-hint class="text-danger" *ngIf="todoForm.invalid && todoForm.dirty && due_date.invalid">*You want to work on this todo forever, set a date?</mat-hint>
+        </fieldset>
+
+        <fieldset class="form-group input-top-down">
+            <mat-checkbox name="mark_complete" [(ngModel)]="todo.isDone" #mark_complete="ngModel" [checked]="todo.isDone">Mark As Completed</mat-checkbox>
+        </fieldset>
+
+        <fieldset class="form-group input-top-down" *ngIf="todoLists && todoLists.length > 0">
+            <mat-form-field appearance="fill">
+                <mat-label>Add To List</mat-label>
+                <mat-select  [(ngModel)]="todoListId" #insert_to_todolists="ngModel" [ngModelOptions]="{standalone: true}">
+                    <mat-option *ngFor="let todoList of todoLists" [value]="todoList.id">
+                    {{todoList.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </fieldset>
+        
+        <div class="d-flex justify-content-end mt-4">
+            <button type="button" class="btn btn-danger form-delete-btn me-3" (click)="deleteTodo()" *ngIf="todo.id != -1">Delete</button>
+            <button type="submit" class="btn btn-success form-submit-btn" [disabled]="todoForm.invalid">Save</button>
+        </div>
+    </form>
+</div>

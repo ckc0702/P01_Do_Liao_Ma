@@ -1,0 +1,337 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import url(https://unpkg.com/bootstrap@4.1.1/dist/css/bootstrap.min.css); */
+/* @import 'swiper/less';
+@import 'swiper/less/navigation';
+@import 'swiper/less/pagination'; */
+@import "~swiper/css";
+@import "~swiper/css/effect-cube";
+@import "~swiper/css/pagination";
+@import "~swiper/css/navigation";
+@import "~swiper/css/effect-flip";
+
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+} */
+html, body { 
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y:auto; 
+}
+body { 
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    color:white !important;
+    background: #0c192c !important;
+
+    /* background-image: url("/assets/img/login-background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  */
+}
+.background{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.wrapper{
+    padding: 100px 50px 100px 50px;
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+.ignore-wrapper{
+    min-width: calc(100% + 100px);
+    margin-top: -100px;
+    margin-left: -50px; 
+}
+.center-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.centered-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-height: 600px){
+    .centered-content{
+        height: auto;
+    }
+}
+.section{
+    margin-top:70px;
+}
+.label-font{
+    font-size:  20px;
+    font-weight: 500;
+    color: #333;
+}
+.main-font{
+    font-size: 19px;
+    color: #707070;
+}
+.card-bg-color{
+    background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+}
+
+
+.mat-mdc-card {
+    --mdc-elevated-card-container-color: #fff;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+    border-radius: 10px !important;
+}
+.carousel-indicators button
+{
+  background-color: #007aff !important;
+  border-radius: 50%;
+  width:10px !important;
+  height:10px !important;
+  margin-left: 6px !important;
+  margin-right: 6px !important;
+}
+
+.mat-mdc-table{
+    background: #27293d !important;
+}
+.mat-mdc-table>tbody>tr>td {
+    color: rgba(255,255,255,.7)!important;
+}
+.mat-mdc-table td, .mat-mdc-table th {
+    padding: 1rem !important; 
+    vertical-align: top !important;
+    border-top: 0.0625rem solid #e3e3e3 !important;
+}
+.mat-mdc-table>tbody>tr>td, .mat-mdc-table>tbody>tr>th, .mat-mdc-table>tfoot>tr>td, .mat-mdc-table>tfoot>tr>th, .mat-mdc-table>thead>tr>td, .mat-mdc-table>thead>tr>th {
+    border-color: rgba(255,255,255,.1) !important;
+    padding: 12px 7px !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+.mat-mdc-table>thead>tr>th {
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    font-weight: 700 !important;
+    border: 0 !important;
+    color: rgba(255,255,255,.7) !important;
+}
+.table-wrapper, .mdc-data-table__table{
+    border-radius: 10px;
+}
+
+
+/* Modal center */
+.modal-open .modal {
+    display: flex !important;
+    align-items: center !important;
+}
+.modal-dialog {
+    flex-grow: 1;
+}
+.modal-content{
+    background: #27293d !important;
+    color: white;
+}
+.modal-header{
+    border-bottom: none !important;
+}
+.modal-title{
+    background-color: #fd5d93;
+    background-image: linear-gradient(to right, #ff9966,  #ff5e62);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+
+    font-weight: 600;
+}
+
+
+.form-title{
+    /* font-weight: lighter; */
+    font-style: oblique;
+}
+.form-submit-btn, .form-delete-btn{
+    width: 100px; 
+}
+.form-group {
+    position: relative;
+}
+.input-label{
+    font-size: 16px;
+    color: #ff9966;
+    position: absolute;
+    top: 0;
+    white-space: nowrap;
+    transform-origin: 0 0;
+    background:#27293d;
+    transition: transform 120ms ease-in;
+    line-height: 1.2;
+    transform: translate(.4rem, -60%);
+    font-weight: bold;
+}   
+.input-field {
+    box-sizing: border-box !important;
+    display: block !important;
+    width: 100% !important;
+    background: transparent !important;
+    color: white !important;
+    color-scheme: dark !important;
+    border-radius: 5px !important;
+
+    background-color:rgba(0,0,0,0) !important;
+}
+.input-top-down{
+    margin-top:30px;
+}
+[name=mark_complete] label{
+    color: #ff9966 !important;
+    font-size: 16px;
+    font-weight: bold;
+}
+[name=mark_complete] .mdc-checkbox__background{
+    border-color: rgb(255, 255, 255) !important;
+}
+
+
+.mat-drawer-inner-container{
+    overflow: hidden !important;
+}
+
+
+/* Hide today button from calendar on width */
+@media screen and (max-width: 540px) {
+    .fc-today-button{
+        display: none !important;
+    }
+}
+/* Hide today button from calendar on width to end */
+
+
+/* Calendar internal settings */
+.fc-scroller.fc-scroller-liquid-absolute::-webkit-scrollbar,  .fc-scroller.fc-scroller-liquid-absolute::-webkit-scrollbar{ /* Hide scrollbar for Chrome, Safari and Opera */
+    display: none; 
+}
+.fc-scroller.fc-scroller-liquid-absolute, .fc-scroller.fc-scroller-liquid-absolute { /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+th .fc-scroller{
+    overflow: hidden !important;
+}
+
+.fc-toolbar-title{
+    background-color: #fd5d93;
+    background-image: linear-gradient(to right, #ff9966,  #ff5e62);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+
+    font-weight: 600;
+}
+    /* ***Calendar Table border setting*** */
+    .fc .fc-scrollgrid table {
+        border-top-style: initial;
+        border-color: #ddd;
+    }
+    td[role=presentation], th[role=presentation], table, th[role=columnheader]{
+        border: 0 !important;
+    }
+    /* ***Calendar label setting*** */
+    .fc-col-header-cell-cushion, .fc-daygrid-day-number{
+        text-decoration: none;
+
+        background-color: #fd5d93;
+        background-image: linear-gradient(to right, #ff9966,  #ff5e62);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent;
+    }
+    th[role=columnheader]>.fc-scrollgrid-sync-inner{
+        display: flex;
+        justify-content: right;
+    }
+    /* ***Calendar Event setting*** */
+    .fc-daygrid-day-events{
+        width: 100% !important;
+    }
+    .fc-event-main{
+        overflow-x: hidden; /*hide text in event if overflow x*/
+    }
+/* Calendar internal settings end */
+
+
+/* Datepicker range setting */
+.mat-mdc-form-field-subscript-wrapper{ /*hide hint*/
+    display: none;
+}
+mat-calendar, mat-datepicker-content{
+    background: #28282B !important;
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+.mat-calendar-body-cell-content{
+    color: white;
+}
+.mat-calendar-body-label{
+    color: white;
+}
+.mat-calendar-table-header{
+    color: white;
+}
+.mat-calendar-period-button {
+    color: white !important;
+}
+.mat-calendar-arrow{
+    fill:#ddd !important
+}
+.mat-calendar-previous-button, .mat-calendar-next-button {
+    color: white !important;
+}
+.mat-datepicker-content
+{ 
+     transform: scale(0.9);
+     /* zoom:0.8; */
+}
+    /* Date range picker input design */
+    .mat-mdc-text-field-wrapper{
+        background: transparent !important;
+    }
+    /* .mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before {
+        border-bottom-color: rgba(170,102,119) !important; 
+    }
+    .mdc-text-field--filled:not(.mdc-text-field--disabled):hover .mdc-line-ripple::after {
+        border-bottom-color:#ff9966 ;
+    } */
+    .mdc-floating-label{
+        /* background-color: #fd5d93;
+        background-image: linear-gradient(to right, #ff9966,  #ff5e62);
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent; 
+        -moz-text-fill-color: transparent; */
+
+        color: #ff9966 !important;
+    }
+    .mat-mdc-icon-button.mat-unthemed.mat-mdc-button-base{
+        color: #ff9966;
+    }
+/* Datepicker range setting end */
+
+
+/* Adjust select option settings */
+.cdk-global-overlay-wrapper, .cdk-overlay-container { /* Adjust select option z-index conflict in modal dialog */
+    z-index: 99999 !important;
+ }
+ .mat-mdc-select-min-line{
+    color: white;
+ }
+/* Adjust select option settings end */

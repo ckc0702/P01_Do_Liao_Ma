@@ -1,0 +1,232 @@
+<div class="row mb-5">
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <mat-card class="dashboard-card"> 
+            <mat-card-header>
+                <div class="card-icon">
+                    <i class="material-icons card-category ">schedule</i>
+                </div>
+                <h5 class="card-category ms-1">Today Tasks</h5>
+            </mat-card-header>
+            <mat-card-content class="my-3">
+                <h4 class="card-title text-center">{{totalTodayTodos}} Tasks Left</h4>
+            </mat-card-content>
+            <mat-card-footer class="p-2">
+                <div class="stats">
+                    <i class="material-icons pe-1 card-footer">hourglass_bottom</i>
+                    <a href="javascript:void(0)" class="card-footer" routerLink="/todos">Goto todos</a>
+                </div>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+                <div class="card-icon">
+                    <i class="material-icons card-category">check_box</i>
+                </div>
+                <p class="card-category ms-1">Completed Tasks</p>
+            </mat-card-header>
+            <mat-card-content class="mb-3">
+                <h3 class="card-title text-center">{{totalcompletedTodos24}}</h3>
+            </mat-card-content>
+            <mat-card-footer class="p-2">
+                <div class="stats">
+                    <i class="material-icons card-footer">date_range</i><span class="card-footer-span"> Last 24 Hours</span>
+                </div>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+                <div class="card-icon">
+                    <i class="material-icons card-category">pending_actions</i>
+                </div>
+                <p class="card-category ms-1">Available Tasks</p>
+            </mat-card-header>
+            <mat-card-content class="mb-3">
+                <h3 class="card-title text-center">{{totalavailableTodos}}</h3>
+            </mat-card-content>
+            <mat-card-footer class="p-2">
+                <div class="stats">
+                    <i class="material-icons pe-1 card-footer">hourglass_bottom</i>
+                    <a href="javascript:void(0)" class="card-footer" routerLink="/todos">Goto todos</a>
+                </div>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+    <div class="col-lg-3 col-md-6 col-sm-6 mb-2">
+        <mat-card class="dashboard-card">
+            <mat-card-header>
+                <div class="card-icon">
+                    <i class="material-icons card-category">more_time</i>
+                </div>
+                <p class="card-category ms-1">Task Due Today</p>
+            </mat-card-header>
+            <mat-card-content class="mb-3">
+                <h3 class="card-title text-center">{{totaldueTodayTodos}}</h3>
+            </mat-card-content>
+            <mat-card-footer class="p-2">
+                <div class="stats">
+                    <i class="material-icons pe-1 card-footer">date_range</i>
+                    <a href="javascript:void(0)" class="card-footer" routerLink="/todos">Goto todos</a>
+                </div>
+            </mat-card-footer>
+        </mat-card>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6 col-lg-6 chart-col mb-5">
+        <mat-card class="dashboard-card game-row-card">
+            <mat-card-header>
+                <div>
+                    <p class="card-category">
+                        <strong class="text-success"> {{totalThreeDaysTodos}} </strong> task set today.
+                    </p>
+                    <h4 class="card-title">
+                        <i class="material-icons me-2 chart-title-icon">group_work</i>
+                        Tasks In 3 Days
+                    </h4>
+                </div>   
+            </mat-card-header>
+            <mat-card-content class="my-3">
+                <div class="chart-container w-100">
+                    <!-- <canvas  id="tTask" >{{ tChart }}</canvas> -->
+                    <canvas #threeDayTaskChart baseChart
+                        [datasets] = "tdTaskChartDataSet"
+                        [labels] = "tdTaskChartLabels "
+                        [options] = "tdTaskChartOptions"
+                        [type] = "tdTaskChartType"
+                        >
+                        </canvas>
+                </div>
+            </mat-card-content >
+        </mat-card>
+    </div>
+    <div class="col-md-6 col-lg-6 chart-col mb-5">
+        <mat-card class="dashboard-card game-row-card">
+            <mat-card-header>
+                <div>
+                    <p class="card-category">
+                        <strong class="text-danger"> {{totalWeeklyTodos}} </strong> tasks todo
+                    </p>
+                    <h4 class="card-title">
+                        <i class="material-icons me-2 chart-title-icon">access_alarm</i>
+                        Weekly Tasks
+                    </h4>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="my-3">
+                <div class="chart-container">
+                    <canvas #weeklyTaskChart baseChart
+                    [datasets] = "wTaskChartDataSet"
+                    [labels] = "wTaskChartLabels "
+                    [options] = "wTaskChartOptions"
+                    [type] = "wTaskChartType"
+                    >
+                    </canvas>
+                </div>
+            </mat-card-content >
+        </mat-card>
+    </div>
+    <!-- <div class="col-md-12 col-lg-4 mini-game-col mb-5">
+        <mat-card class="dashboard-card game-row-card">
+            <mat-card-content class="h-100">
+                <app-board #gameComponent></app-board>
+            </mat-card-content >
+        </mat-card>
+    </div> -->
+</div>
+<div class="row">
+    <div class="col-lg-12 col-md-12">
+        <mat-card class="dashboard-card game-row-card">
+            <mat-card-content class="h-100">
+                <app-board #gameComponent></app-board>
+            </mat-card-content >
+        </mat-card>
+    </div>
+</div>
+<!-- <div class="row">
+    <div class="col-lg-6 col-md-12">
+        <mat-card class="dashboard-card mb-5">
+            <div class="card-header border-bottom border-1 px-2 pt-3 pb-2">
+                <h4 class="card-title">Tasks</h4> 
+                <p class="card-category">Pending task list</p>
+            </div>
+            <mat-card-content>
+                <mat-tab-group>
+                    <mat-tab *ngFor="let tab of tablist">
+                        <ng-template mat-tab-label>
+                            <mat-icon>{{tab.icon}}</mat-icon>
+                                {{tab.title}}
+                        </ng-template>
+                        <ng-template matTabContent>
+                            <div class="table-responsive mt-1">
+                                <table class="table table-hover">
+                                    <tbody>
+                                    <tr *ngFor="let head of tab.body">
+                                        <td *ngFor="let head of tab.body">
+                                        <div *ngIf="head.ref; else templateName">
+                                            If isValid is true
+                                        </div>
+                                        
+                                        <ng-template #templateName>
+                                            If isValid is false
+                                        </ng-template>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </ng-template>
+                    </mat-tab>
+                </mat-tab-group>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <div class="col-lg-6 col-md-12">
+        <mat-card class="dashboard-card">
+            <div class="card-header border-bottom border-1 px-2 pt-3 pb-2">
+                <h4 class="card-title">Users Logged In</h4>
+                <p class="card-category">Current logged in user</p>
+            </div>
+            <mat-card-content>
+                <div class="card-body table-responsive">
+                    <table class="table table-hover">
+                        <thead class="text-warning">
+                            <th>No</th>
+                            <th>Name</th>
+                            <th>Country</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Dakota Rice</td>
+                                <td>Niger</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Minerva Hooper</td>
+                                <td>Curaçao</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Sage Rodriguez</td>
+                                <td>Netherlands</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>Philip Chaney</td>
+                                <td>Korea, South</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div> -->
+
+   
+  

@@ -1,0 +1,28 @@
+.header {
+    width: 100%;
+    z-index: 99;
+    position: -webkit-sticky;
+    position: fixed;
+    transition: 0.3s;
+    top: 0;
+}
+.header, .navbar{
+    height: 60px;
+}
+.navbar{
+    /* background: rgba(0,0,0,1);
+    background: -moz-linear-gradient(-45deg, rgba(0,0,0,1) 18%, rgba(3,152,252,1) 100%);
+    background: -webkit-gradient(left top, right bottom, color-stop(18%, rgba(0,0,0,1)), color-stop(100%, rgba(3,152,252,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(0,0,0,1) 18%, rgba(3,152,252,1) 100%);
+    background: -o-linear-gradient(-45deg, rgba(0,0,0,1) 18%, rgba(3,152,252,1) 100%);
+    background: -ms-linear-gradient(-45deg, rgba(0,0,0,1) 18%, rgba(3,152,252,1) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,1) 18%, rgba(3,152,252,1) 100%); */
+    background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+    box-shadow: 0 2px 4px 0 rgb(0 0 2 / 40%);
+}
+.nav-link{
+    color: white !important;
+}
+.navbar-brand{
+    color: white !important;
+}

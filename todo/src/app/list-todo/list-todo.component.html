@@ -1,0 +1,31 @@
+<div class="container">
+    <form (ngSubmit)="listTodoForm.valid && saveList()" #listTodoForm="ngForm">
+        
+        <fieldset class="form-group">
+            <label class="input-label">Name<span class="text-danger"> *</span></label>
+            <input type="text" class="form-control input-field" name="name" [(ngModel)]="todoList.name" #name="ngModel" placeholder="Enter List Name" required>
+            <mat-hint class="text-danger" *ngIf="listTodoForm.invalid && listTodoForm.dirty && name.invalid">*You need a name for a todo list, bro</mat-hint>
+        </fieldset>
+        
+        <fieldset class="form-group input-top-down">
+            <label class="input-label ">Start Date<span class="text-danger"> *</span></label>
+            <input type="date" class="form-control input-field" name="start_date" [ngModel]="todoList.startDate | date:'yyyy-MM-dd' " (ngModelChange)="todoList.startDate = $event" #start_date="ngModel" required>
+            <mat-hint class="text-danger" *ngIf="listTodoForm.invalid && listTodoForm.dirty && start_date.invalid">*You can't have a todo without a date!</mat-hint>
+        </fieldset>
+
+        <fieldset class="form-group input-top-down">
+            <label class="input-label">Target Date<span class="text-danger"> *</span></label>
+            <input type="date" class="form-control input-field" name="due_date" [ngModel]="todoList.targetDate | date:'yyyy-MM-dd' " (ngModelChange)="todoList.targetDate = $event" #due_date="ngModel" required>
+            <mat-hint class="text-danger" *ngIf="listTodoForm.invalid && listTodoForm.dirty && due_date.invalid">*You want to work on this todo forever, set a date?</mat-hint>
+        </fieldset>
+
+        <fieldset class="form-group input-top-down">
+            <mat-checkbox name="mark_complete" [(ngModel)]="todoList.isDone" #mark_complete="ngModel" [checked]="todoList.isDone">Mark As Completed</mat-checkbox>
+        </fieldset>
+
+        <div class="d-flex justify-content-end mt-4">
+            <button type="button" class="btn btn-danger form-delete-btn me-3" (click)="deleteList()" *ngIf="todoList.id != -1">Delete</button>
+            <button type="submit" class="btn btn-success form-submit-btn" [disabled]="listTodoForm.invalid">Save</button>
+        </div>
+    </form>
+</div>

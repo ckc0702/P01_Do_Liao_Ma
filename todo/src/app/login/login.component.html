@@ -1,0 +1,50 @@
+<!-- <h1>Login!</h1>
+
+<div class="container">
+    <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMsg}}</div>
+
+    <div>
+        User Name : <input type="text" name="username" [(ngModel)]="username">
+        Password  : <input type="password" name="password" [(ngModel)]="password">
+
+        <button (click)=handleJWTAuthLogin() class="btn btn-success">Login</button>
+    </div>
+</div> -->
+
+
+<div class="centered-content">
+  <div>
+    <div class="alert alert-warning" *ngIf="invalidLogin">{{errorMsg}}</div>
+    <mat-card  class="login-card">
+      <div class="text-center image-content">
+        <span class="overlay"></span>
+
+        <div class="card-image">
+          <img src="{{AVATAR_IMG_URL}}" alt="Avatar" class="rounded-img login-avatar" width="150" height="150">
+        </div>
+      </div>
+      <div class="card-content">
+        <form class="form">
+          <mat-card-content>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Username" type="text" name="username" [(ngModel)]="username">
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="password">
+            </mat-form-field>
+            <mat-checkbox [(ngModel)]="rememberMe" #remember_me="ngModel" [checked]="rememberMe" [ngModelOptions]="{standalone: true}">Remember Me</mat-checkbox>
+          </mat-card-content>
+          <button [style.background]="'linear-gradient(to right, #36d1dc ,  #5b86e5)'" (click)=handleJWTAuthLogin()  type="button" class="shadow btn btn-primary login-btn">Log In</button>
+          <!-- <button [style.background]="'linear-gradient(to right, #eecda3,  #ef629f)'"  style="color:white;height:50px;border-radius: 20px;" (click)=handleJWTAuthLogin() mat-stroked-button class="btn-block w-100 mt-4">Log In</button> -->
+        </form>
+      </div>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+
+

@@ -1,0 +1,46 @@
+/* Css for chart in card */
+.chart-container {
+  height: 400px;
+  width: 100%;
+}
+.game-row-card{
+  height: 500px;
+}
+/* Css for chart in card end */
+
+/* Css for dashboard card */
+.dashboard-card{
+  background: #27293d;
+}
+.dashboard-card .card-category{
+  color: #9a9a9a;
+  font-weight: 300;
+  font-size: 16px;
+}
+.dashboard-card .card-title{
+  color: #FFF;
+  font-weight: 100;
+}
+.dashboard-card .card-footer{
+  color: #fd5d93;
+  font-weight: 100;
+}
+.card-footer.material-icons, .card-footer-span, .chart-title-icon{
+  /* color: #FFF !important; */
+  background-color: #fd5d93;
+  background-image: linear-gradient(to right, #ff9966,  #ff5e62);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+/* Css for dashboard card end */
+
+
+/* Hide game if media size minized to */
+@media screen and (max-width: 540px) {
+  .mini-game-col{
+    /* display: none; */
+  }
+}
+/* Hide game if media size minized to end */

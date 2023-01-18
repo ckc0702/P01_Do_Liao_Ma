@@ -1,0 +1,123 @@
+/* Css for form */
+.register-card{
+    height: 500px;
+}
+.register-card .form{
+opacity: 1;
+padding: 1px 50px 30px 50px;
+width: 100%;
+background: #fff;
+border-radius: 10px;
+transform: scale(1);
+-webkit-transform: scale(1);
+-ms-transform: scale(1);
+z-index: 5;
+max-width: 500px;
+}
+.register-card.back {
+transform: scale(.95);
+-webkit-transform: scale(.95);
+-ms-transform: scale(.95);
+opacity: .8;
+z-index: -1;
+}
+.example-form {
+min-width: 100%;
+max-width: 300px;
+width: 100%;
+}
+.example-full-width,
+.btn-block, mat-form-field{
+width: 100%;
+}
+mat-card-header {
+text-align: center;
+width: 100%;
+display: block;
+font-weight: 700;
+}
+mat-card-header mat-card-title {
+font-size: 30px;
+margin: 0;
+}
+.mat-card {
+padding: 40px 70px 50px;
+}
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+padding: 0.8375em 0;
+}
+.register-btn{
+border-radius: 20px;
+width: 100%;
+margin-top:40px;
+border: none;
+}
+/* Css for form end*/
+
+
+/* Css for register card */
+.image-content{
+display: flex;
+/* flex-direction: column; */
+/* align-items: center; */
+justify-content: center;
+}
+.card-image{
+position: relative;
+height: 120px;
+width: 120px;
+border-radius: 50%;
+background: #FFF;
+padding: 3px;
+}
+.card-image .rounded-img{
+height: 100%;
+width: 100%;
+object-fit: cover;
+border-radius: 50%;
+border: 4px solid #36d1dc;
+}
+.register-avatar:hover {
+-webkit-transform: scaleX(-1);
+transform: scaleX(-1);
+}
+.overlay{
+position: absolute;
+height: 100%;
+width:100%;
+top:0;
+left: 0;
+/* background-color: #4070F4; */
+background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+border-radius: 10px 10px 0 50px; /* 10px for card border radius */
+}
+.overlay::before,
+.overlay::after{
+content: '';
+position: absolute;
+height: 40px;
+width: 40px;
+right: 0;
+bottom: -40px; /* bottom 0 = red box in the bottom of overlay, then the red box is 40px so -40px will move red box directly under the overlay */
+/* background-color: #4070F4; */
+background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+}
+.overlay::after{
+border-radius: 0 50px 0 0;
+/* background-color: #FFF; */
+background-image: linear-gradient(to right, #FFF,  #FFF);
+}
+.image-content, .card-content{
+position: relative;
+padding: 25px 0;
+}
+/* Css for register card end */
+  
+/* .sign-up-text{
+    background-color: #fd5d93;
+    background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+} */

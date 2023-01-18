@@ -1,0 +1,119 @@
+/* Layout */
+.left-container .profile-card:not(:first-child){
+    margin-top: 100px;
+}
+
+.right-container .profile-card:not(:first-child){
+    margin-top: 100px;
+}
+
+.left-container, .right-container{
+    display: flex;
+    justify-content: center;
+}
+
+.left-container .profile-card:first-child{
+    margin-top: 150px;
+}
+
+.profile-card.medium{
+    width: 100%;
+    height: 600px;
+    background: #27293d;
+}
+
+.profile-card.small{
+    width: 100%;
+    height: 400px;
+    background: #27293d;
+}
+
+.card-wrapper{
+    width: 90%;
+}
+
+mat-card-header{
+    justify-content: center;
+}
+mat-card-content{
+    justify-content: center;
+    margin-top: 20px;
+}
+/* Layout End */
+
+/* Profile Image */
+.card-image{
+    position: relative;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    background: transparent;
+    padding: 3px;
+}
+.card-image .rounded-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    /* border: 4px solid #4070F4; */
+    /* border: 2px solid white; */
+}
+.card-image{
+    -webkit-animation: animate 125s linear infinite;
+    -moz-animation: animate 125s linear infinite;
+    -ms-animation: animate 125s linear infinite;
+    -o-animation: animate 125s linear infinite;
+    animation: animate 125s linear infinite;
+}
+@keyframes animate
+{
+    from {
+        -ms-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      to {
+        -ms-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+}
+/* Safari and Chrome */ 
+/* @-webkit-keyframes rotating 
+{
+    from {
+        -webkit-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+} */
+/* Profile Image End */
+
+/* Font Setting */
+.user-name, .user-information{
+    background-color: #fd5d93;
+    background-image: linear-gradient(to right, #ff9966,  #ff5e62);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+
+    font-size: 16px;
+}
+/* Font Setting End */
+
+/* Profile information setting */
+.information-wrapper{
+    padding-top: 40px;
+    padding-left: 20px;
+}
+/* Profile information setting end */

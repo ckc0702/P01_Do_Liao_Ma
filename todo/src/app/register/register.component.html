@@ -1,0 +1,28 @@
+<div class="centered-content">
+    <mat-card  class="register-card">
+      <div class="text-center image-content">
+        <span class="overlay"></span>
+  
+        <div class="card-image">
+          <img src="{{AVATAR_IMG_URL}}" alt="Avatar" class="rounded-img register-avatar" width="150" height="150">
+        </div>
+      </div>
+      <div class="card-content">
+        <form class="form" (ngSubmit)="registerForm.valid && registerUser()" #registerForm="ngForm">
+          <mat-card-content>
+            <mat-form-field>
+              <input matInput placeholder="Username" type="text" name="username" [(ngModel)]="user.username" #username="ngModel" required (input)="hideUsernameUsedMsg()">
+            </mat-form-field>
+            <mat-hint class="text-danger" *ngIf="registerForm.invalid && registerForm.dirty && username.invalid">*Username is required</mat-hint>
+            <mat-hint class="text-danger" *ngIf="usernameUsed">*Username is used, please try another one</mat-hint>
+            <mat-form-field>
+              <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+            </mat-form-field>
+            <mat-hint class="text-danger" *ngIf="registerForm.invalid && registerForm.dirty && password.invalid">*Password is required</mat-hint>
+          </mat-card-content>
+          <button [style.background]="'linear-gradient(to right, #5b86e5 ,  #36d1dc)'"  type="submit" class="shadow btn btn-primary register-btn">Sign Up</button>
+        </form>
+      </div>
+    </mat-card>
+  </div>
+ 

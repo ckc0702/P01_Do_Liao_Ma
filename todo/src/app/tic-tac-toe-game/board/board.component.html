@@ -1,0 +1,28 @@
+<div class="game-board">
+    <div class="game-menu">
+        <div class="game-status">
+            <h4 class="card-title mb-2">
+                <i class="material-icons chart-title-icon">notifications_paused</i>
+                Current Player: <span class="text-sucess"> {{ player }} </span>
+            </h4>
+            <span class="tic-tac-toe">TIC TAC TOE</span>
+            <div class="game-restart">
+                <i class="material-icons chart-title-icon new-game" (click)="newGame()">restart_alt</i>
+            </div>
+        </div>
+        
+        <p class="card-category" *ngIf="winner">
+            Player <strong class="text-success"> {{winner}} </strong> won the game!
+        </p>
+    </div>
+    <div class="game-content">
+        <main>
+            <app-square 
+                *ngFor="let val of squares; let i = index" 
+                [value]="val"
+                (click)="makeMove(i)"> 
+            </app-square>
+        </main>
+    </div>
+</div>
+

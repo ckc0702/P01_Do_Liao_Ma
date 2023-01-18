@@ -1,0 +1,195 @@
+
+/* Css for carousel */
+#slider-link{
+    pointer-events: none;
+}
+/* Center text within image in a div */
+.centered-of-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.slider-text-container{
+    width: 100%;
+    max-width: 1038px;
+}
+.slider-title{
+    text-transform: uppercase;
+    margin: 0;
+    font-size: 3rem;
+    /* white-space: nowrap; */
+}
+.slider-text{
+    margin: 0;
+    font-size: 22px;
+    word-wrap:break-word;
+}
+.img-bg-blur{
+    position: absolute;
+    height: 100%;
+    background: rgb(0, 0, 0); /* Fallback color */
+    background: rgba(0, 0, 0, 0.3); /* Black background with 0.5 opacity */
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+/* Css for carousel end*/
+
+
+/* Css for rating */
+ngb-rating {
+    color: #FFC107;
+    font-size: 40px;
+}
+.underline-span{
+    display: block;
+    font-size: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.score-small{
+    word-wrap: break-word;
+}
+/* Css for rating end */
+
+
+/* Css for comments card */
+.card{
+    border-radius: 10px;
+    background-color: white;
+    --mdc-elevated-card-container-color: #fff;
+    box-shadow: 0 10px 20px rgb(0 0 0 / 19%), 0 6px 6px rgb(0 0 0 / 23%);
+    border: none;
+    width: 320px;
+}
+.image-content{
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+}
+.card-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background: #FFF;
+    padding: 3px;
+}
+.card-image .rounded-img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    /* border: 4px solid #4070F4; */
+    border: 4px solid #36d1dc;
+}
+.comment-avatar:hover{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+.overlay{
+    position: absolute;
+    height: 100%;
+    width:100%;
+    top:0;
+    left: 0;
+    /* background-color: #4070F4; */
+    background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+    border-radius: 10px 10px 0 50px; /* 10px for card border radius */
+}
+.overlay::before,
+.overlay::after{
+    content: '';
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    right: 0;
+    bottom: -40px; /* bottom 0 = red box in the bottom of overlay, then the red box is 40px so -40px will move red box directly under the overlay */
+    background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+    /* background-color: #4070F4; */
+}
+.overlay::after{
+    border-radius: 0 50px 0 0;
+    /* background-color: #FFF; */
+    background-image: linear-gradient(to right, #FFF ,  #FFF);
+}
+.image-content, .card-content{
+    position: relative;
+    padding: 25px 0;
+}
+.view-more-btn{
+    background-image: linear-gradient(to right, #36d1dc ,  #5b86e5);
+    border: none;
+}
+/* Css for comments card end */
+
+
+/* Css for comments card swiper */
+.slide-wrapper{
+    display: flex;
+    justify-content: center;
+    min-height: 400px;
+}
+.swiper-slide {
+    height: auto !important;
+}
+.swiper-content{
+    height: 100% !important;
+}
+.slide-container{
+    max-width: 1300px;
+    width: 100%;
+    /* background-color: grey; */
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.swiper-pagination{
+    bottom:-10px;
+}
+.swiper-wrapper{
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1180px){
+    .swiper-button-next, .swiper-button-prev{
+        /* color: red; */
+    }
+} 
+
+/* Css for comments card swiper end */
+
+
+/* Css for demo login */
+a.demo-login{
+    text-decoration: none;
+
+}
+.table-wrapper.hide-overflow{
+    overflow: hidden;
+}
+/* Css for demo login end */
+
+
+
+

@@ -1,0 +1,150 @@
+<div class="row">
+    <div class="col-lg-8 col-md-12 col-sm-12 mb-2">
+        <mat-card class="tasklist-card d-flex flex-row pt-4 px-4">
+            <div class="w-100 h-100">
+                <div class="change-view-icon">
+                    <i class="material-icons"  #viewBtn (click)="toggleView(viewBtn)">add_task</i> 
+                    <!-- <span class="ms-1"> To calendar view</span> -->
+                </div>
+                
+                <div  [@calendarViewAnimation]="isCalendarView ? 'calendarview' : 'tasklistview'" class="hide-overflow calendar-wrapper">
+                    <div class="calendar-positon-container">
+                        <full-calendar [options]="calendarOptions">
+                            <ng-template #eventContent let-arg>
+                                <b>{{arg.timeText}}</b>
+                                <i>{{arg.event.title}}</i>
+                            </ng-template>
+                        </full-calendar>
+                    </div>
+                </div>
+                
+                <mat-sidenav-container [@taskListViewAnimation]="isCalendarView ? 'calendarview' : 'tasklistview'" class="hide-overflow">
+                    <mat-sidenav opened mode="side">
+                        <div class="card-header">
+                            <div class="d-flex flex-row">
+                                <i class="material-icons card-title-icon">book</i><h4 class="card-title">LISTS</h4>
+                            </div>  
+                        </div>
+                        <div class="card-content">
+                            <div class="list-items">
+                                <div class="row" *ngFor="let listTodo of listTodos; index as i">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <a  class="list-menu-item" [ngClass]="{'is-active' : i == selectedTodoListIndex}" (click)="switchTodoList(listTodo, i)">
+                                            <!-- <i class="material-icons task-list-icons">assignment</i><p class="main-font">{{listTodo.name}}</p> -->
+                                            <p class="main-font">{{listTodo.name}}</p>
+                                        </a>
+                                        <!-- <button mat-mini-fab color="primary" class="me-2 todo-list-action" #updateList>
+                                            <mat-icon>menu</mat-icon>
+                                        </button> -->
+                                        <i class="material-icons edit-list-icon" (click)="onOpenLgListUpdate(addList, listTodo)">visibility</i>
+                                    </div>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-center mt-2 new-list-btn-wrapper">
+                                <button class="btn btn-success new-list-btn" (click)="onOpenLgListAdd(addList)">+ New List</button>
+                            </div>
+                        </div>
+                    </mat-sidenav>
+                    <mat-sidenav-content>
+                        <div class="card-header">
+                            <div class="d-flex flex-row">
+                                <i class="material-icons card-title-icon">face</i><h4 class="card-title">TODOS</h4>
+                            </div>  
+                        </div>
+                        <div class="card-content">
+                            <div class="list-tasks-items">
+                                <div class="task" [ngClass]="{'isCompleted' : todo.isDone == true}" *ngFor="let todo of selectedTodoListTodos" (click)="onOpenLgUpdate(addTodo, todo)">
+                                    <div class="d-flex flex-row">
+                                        <i class="material-icons">touch_app</i>
+                                        <p class="main-font">{{todo.description}}</p>
+                                    </div>   
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="d-flex justify-content-end">
+                                <button mat-fab color="warn" aria-label="add new task" (click)="onOpenLgListTodoAdd(addTodo)"> 
+                                    <mat-icon>playlist_add</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </mat-sidenav-content>
+                </mat-sidenav-container>
+            </div>
+            
+        </mat-card>
+    </div>
+    <div class="col-lg-4 col-md-12 col-sm-12 mb-2">
+        <mat-card class="tasklist-card d-flex flex-row pt-4 ps-2">
+            <div class="w-100">
+                <div class="card-header">
+                    <h4 class="card-title">MY TODOS</h4>
+                    <div class="my-todos-datepicker-wrapper">
+                        <mat-form-field appearance="fill" class="my-todos-filter">
+                            <mat-label>Enter a date range</mat-label>
+                            <mat-date-range-input [rangePicker]="picker">
+                                <input matStartDate placeholder="Start date" [ngModel]="filterStartDate | date:'yyyy-MM-dd'" (ngModelChange)="filterStartDate = $event" (ngModelChange)="resetMyTodos()"  #filter_start_date="ngModel">
+                                <input matEndDate placeholder="End date" [ngModel]="filterEndDate | date:'yyyy-MM-dd'" (ngModelChange)="filterEndDate = $event" (ngModelChange)="resetMyTodos()"  #filter_end_date="ngModel">
+                            </mat-date-range-input>
+                            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="card-content-dt under-datepicker">
+                    <div class="list-tasks-items">
+                        <div class="task" [ngClass]="{'isCompleted' : myTodo.isDone == true}" *ngFor="let myTodo of myTodos" (click)="onOpenLgUpdate(addTodo, myTodo)">
+                            <div class="d-flex flex-row">
+                                <i class="material-icons">touch_app</i>
+                                <p class="main-font">{{myTodo.description}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-end pe-3 mt-1">
+                        <button mat-fab color="warn" aria-label="add new task" (click)="onOpenLgAdd(addTodo)">
+                            <mat-icon>playlist_add</mat-icon>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<!-- Bootstrap Modals  -->
+<ng-template #addList let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title form-title" id="modal-basic-title">{{listModalTitle}}</h4>
+		<button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<app-list-todo [todoListData]="todoListData" (close)="onCloseLg()"></app-list-todo>
+	</div>
+</ng-template>
+
+<ng-template #addTodo let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title form-title" id="modal-basic-title">{{todoModalTitle}}</h4>
+		<button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<app-todo [todoData]="todoData" (close)="onCloseLg()"></app-todo>
+	</div>
+</ng-template>
+
+<!-- <ng-template #addListTodo let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title form-title" id="modal-basic-title">Add Todo To List</h4>
+		<button type="button" class="btn-close btn-close-white" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+	</div>
+	<div class="modal-body">
+		<app-todo [todoData]="todoData" (close)="onCloseLg()"></app-todo>
+	</div>
+</ng-template> -->

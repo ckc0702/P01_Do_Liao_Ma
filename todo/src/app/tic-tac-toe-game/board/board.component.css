@@ -1,0 +1,90 @@
+.game-board{
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    width: 100%;
+}
+.game-board .game-menu{
+    flex: 0 1 auto;
+    /* The above is shorthand for:
+    flex-grow: 0,
+    flex-shrink: 1,
+    flex-basis: auto
+    */
+}
+
+/* Css for game content */
+.game-board .game-content{
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  align-items: center;
+}
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 0px;
+    height: 90%;
+    width: 90%;
+}
+app-square {
+    border: none;
+    height: 100%;
+}
+/* Css for game board end */
+
+
+/* Css for dashboard card */
+.card-category{
+  color: #9a9a9a;
+  font-weight: 300;
+  font-size: 16px;
+}
+.card-title{
+  color: #FFF;
+  font-weight: 100;
+}
+.card-footer.material-icons, .card-footer-span, .chart-title-icon, .tic-tac-toe{
+  /* color: #FFF !important; */
+  background-color: #fd5d93;
+  background-image: linear-gradient(to right, #ff9966,  #ff5e62);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-text-fill-color: transparent;
+}
+/* Css for dashboard card end */
+
+/* Css for game status */
+.game-status{
+  display: flex;
+}
+.game-restart{
+  margin-left: auto;
+  /* order: 2; */
+  flex: 0 1 auto;
+}
+.new-game{
+  cursor: pointer;
+}
+.tic-tac-toe{
+  flex: 0 1 auto;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  font-size: 18px;
+  animation: spin 10s infinite;
+}
+@keyframes spin {
+  /* 0% { opacity: 0; }
+  100% { opacity: 1; } */
+  from {transform:rotate(0deg);}
+  to {transform: rotate(360deg)}
+}
+@media screen and (max-width: 540px) {
+  .tic-tac-toe{
+    display: none;
+  }
+}
+/* Css for game status end */

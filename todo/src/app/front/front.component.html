@@ -1,0 +1,120 @@
+<!-- Slider Section -->
+<ngb-carousel
+	#carousel
+	[interval]="10000"
+	[pauseOnHover]="pauseOnHover"
+	[pauseOnFocus]="pauseOnFocus"
+	[showNavigationArrows]="false"
+	(slide)="onSlide($event)"
+
+	class="mb-5 ignore-wrapper"
+>
+	<ng-template ngbSlide *ngFor="let img of images; index as i">
+		<a id="slider-link" href="" target="_blank" rel="nofollow noopener noreferrer">
+			<div class="picsum-img-wrapper">
+				<img [src]="img.image" alt="img" height="700px" width="100%"/>
+			</div>
+			<div class="centered-of-img img-bg-blur">
+				<div class="slider-text-container">
+					<h2 class="slider-title">{{img.label}}</h2>
+					<p class="mt-3 slider-text">{{img.text}}</p>
+				</div>	
+			</div>
+		</a>
+	</ng-template>
+</ngb-carousel>
+<!-- Reviews Rating Section -->
+<div class="container text-center review-container section">
+	<h5>Start creating your daily todo list, with our <strong><em>{{APP_TITLE}}</em></strong> Todo Application</h5>
+	<span  class="underline-span section">What Our Users Says About Our Application?</span>
+	<div class="rating-score-container">
+		<ngb-rating
+		[rate]="currentRate" 
+		[max]="maxRate"
+		[readonly]="true"
+		>
+		</ngb-rating>
+	</div>
+	<div class="rating-score-text-container">
+		<label>Most user give <b>DoLiaoMa</b> an overall score of <small class="text-success">5/5</small></label>
+	</div>
+</div>
+<!-- Reviews Comment Section -->
+<div class="review-comments mt-3 text-center">
+	<div class="slide-wrapper text-center">
+		<div class="slide-container">
+			<swiper
+			#commentSwiper
+			[config]="swiperConfig"
+			>
+			<ng-template swiperSlide *ngFor="let comment of comments">
+				<div class="card h-100">
+					<div class="image-content">
+						<span class="overlay"></span>
+
+						<div class="card-image">
+							<img [src]="comment.imgUrl == ''? COMMENT_AVATAR_IMG_URL : comment.imgUrl" alt="img" height="150" width="150" class="rounded-img comment-avatar"/>
+							<!-- <img [src]="comment.imgUrl" alt="img" height="150" width="150" *ngIf="comment.imgUrl;else showDefaultAvatarImg" class="rounded-img"/>
+							<ng-template #showDefaultAvatarImg>
+								<img [src]="AVATAR_IMG_URL" alt="img" height="150" width="150" class="rounded-img"/>
+							</ng-template> -->
+						</div>
+					</div>
+					<div class="card-content">
+						<h2 class="label-font">{{comment.username}}</h2>
+						<p class="main-font">{{comment.review}}</p>
+
+						<button type="button" class="btn btn-primary view-more-btn shadow">View More</button>
+					</div>
+				</div>
+			</ng-template>
+			</swiper>
+		</div>
+	</div>
+</div>
+<!-- Demo Log In Section -->
+<div class="container demo-login-section section">
+	<h5>Don't want to register? Use our demo credential get right into our application</h5>
+
+	<button [@credTblBtnAnimation]="isOpenCredTbl ? 'open' : 'closed'" type="button" class="btn btn-primary view-more-btn shadow" #credTblBtn (click)="toggleTable(credTblBtn)">Hide Credentials</button>
+
+	<div [@credTblParentAnimation]="isOpenCredTbl ? 'open' : 'closed'" class="table-wrapper hide-overflow mt-2">
+		<div class="table-responsive">
+			<table mat-table [dataSource]="dataSource" [@credTblAnimation]="isOpenCredTbl ? 'open' : 'closed'">
+
+				<!-- Position Column -->
+				<ng-container matColumnDef="position">
+					<th mat-header-cell *matHeaderCellDef> No. </th>
+					<td mat-cell *matCellDef="let element"> {{element.position}} </td>
+				</ng-container>
+	
+				<!-- Name Column -->
+				<ng-container matColumnDef="username">
+					<th mat-header-cell *matHeaderCellDef> Username </th>
+					<td mat-cell *matCellDef="let element"> {{element.username}} </td>
+				</ng-container>
+	
+				<!-- Weight Column -->
+				<ng-container matColumnDef="password">
+					<th mat-header-cell *matHeaderCellDef> Password </th>
+					<td mat-cell *matCellDef="let element"> {{element.password}} </td>
+				</ng-container>
+	
+				<!-- Symbol Column -->
+				<ng-container matColumnDef="action">
+					<th mat-header-cell *matHeaderCellDef> Action </th>
+					<td mat-cell *matCellDef="let element">
+						<a class="demo-login" href="javascript: void(0);" (click)="useDemoCredential(element)">Click to login</a>
+					</td>
+				</ng-container>
+	
+				<tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+				<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- <div style="background-color:yellow; width:500px;height:500px" class="reveal">test</div> -->
+
+
+

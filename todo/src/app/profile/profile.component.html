@@ -1,0 +1,73 @@
+<div class="row">
+    <div class="col-lg-6 col-md-12 ">
+        <div class="left-container">
+            <div class="card-wrapper">
+                <mat-card class="profile-card medium">
+                    <form #userForm="ngForm">
+                        <mat-card-content>
+                            <div class="input-wrapper">
+                                <mat-form-field>
+                                    <input matInput placeholder="Username" type="text" name="username" [(ngModel)]="user.username" #username="ngModel" required>
+                                </mat-form-field>
+                                <div class="hint-wrapper">
+                                    <mat-hint class="text-danger" *ngIf="userForm.invalid && userForm.dirty && username.invalid">*Username is required</mat-hint>
+                                </div>
+                                
+                            </div>
+                            <div class="input-wrapper">
+                                <mat-form-field>
+                                    <input matInput placeholder="Password" type="password" name="password" [(ngModel)]="user.password" #password="ngModel" required>
+                                </mat-form-field>
+                                <div class="hint-wrapper">
+                                    <mat-hint class="text-danger" *ngIf="userForm.invalid && userForm.dirty && password.invalid">*Password is required</mat-hint>
+                                </div> 
+                            </div>
+                            <div class="input-wrapper">
+                                <mat-form-field>
+                                    <input matInput placeholder="Name" type="text" name="name" [(ngModel)]="user.name" #name="ngModel" required>
+                                </mat-form-field>
+                                <div class="hint-wrapper">
+                                    <mat-hint class="text-danger" *ngIf="userForm.invalid && userForm.dirty && name.invalid">*Name is required</mat-hint>
+                                </div>  
+                            </div>
+                        </mat-card-content>
+                        <button [style.background]="'linear-gradient(to right, #5b86e5 ,  #36d1dc)'"  type="submit" class="shadow btn btn-primary register-btn">Save</button>
+                    </form>
+                </mat-card>
+    
+                <!-- <mat-card class="profile-card"> 
+                </mat-card> -->
+            </div>
+        </div>   
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <div class="right-container">
+            <div class="card-wrapper">
+                <mat-card class="profile-card small">
+                    <mat-card-header>
+                        <div class="card-image">
+                            <img [src]="DEFAULT_PROFILE_AVATAR_IMG_URL" alt="img" height="150" width="150" class="rounded-img"/>
+                        </div> 
+                    </mat-card-header>
+                    <mat-card-content>
+                        <h5 class="text-center user-name">User1</h5>
+                        <div class="user-information">
+                            <div class="name-wrapper information-wrapper">
+                                <label class="user-information">Your name: User1</label>
+                            </div>
+                            <div class="join-date-wrapper information-wrapper">
+                                <label class="user-information">Join Date: 02/01/2023</label>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+    
+                <!-- <mat-card class="profile-card"> 
+                </mat-card>
+
+                <mat-card class="profile-card"> 
+                </mat-card> -->
+            </div>
+        </div> 
+    </div>
+</div>
