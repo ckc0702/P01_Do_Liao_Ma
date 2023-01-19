@@ -1,4 +1,4 @@
-# p-1-todo-web-app
+# DoLiaoMa Todo Web 
 A basic todo web application using Frontend : Angular, Backend : Spring Boot, JPA, and Hibernate, DB : H2
 
 # VERSIONING 
