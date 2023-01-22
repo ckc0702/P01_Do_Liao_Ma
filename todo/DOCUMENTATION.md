@@ -272,7 +272,9 @@ https://www.javaguides.net/2022/12/spring-boot-dto-example-tutorial.html
 1920x1080		
 2048x1536		
 
-## NEXT VERSION : 1 ##
+##################################################################
+
+## ENHANCEMENTS ##
 1. add profile 
 2. arrange components files
 3. arrange backend mvc files
