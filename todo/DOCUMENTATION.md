@@ -155,6 +155,7 @@ spring.h2.console.enabled=true -> to view on console db info
 2. Spring Boot  : v2.6.14-SNAPSHOT  (24 Nov, 2022 release - newer version available)
 3. Node JS      : v18.12.0 
 4. JWT 			: v0.9.1
+5. Java  		: v8 (deprecated)
 
 ##################################################################
 
