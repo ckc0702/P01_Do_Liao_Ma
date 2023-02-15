@@ -1,21 +1,31 @@
 <header class="header">
     <nav class="navbar navbar-expand-md  px-3">
+
         <div *ngIf="!basicAuthenticationService.isUserLoggedIn(); else routeDashboard"><a href="{{BASE_URL}}" class="navbar-brand"><img src="/assets/img/Logo.png" alt="image"  width="50" height="50"> {{APP_TITLE}}</a></div>
         <ng-template #routeDashboard>
             <a href="/dashboard/{{basicAuthenticationService.getAuthenticatedUser()}}" class="navbar-brand"><img src="/assets/img/Logo.png" alt="image"  width="50" height="50"> {{APP_TITLE}}</a>
           </ng-template>
 
-        <ul class="navbar-nav">
-            <li><a routerLink="/dashboard/{{basicAuthenticationService.getAuthenticatedUser()}}" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Dashboard</a></li>
-            <li><a routerLink="/todos" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Todos</a></li>
-            <!-- <li><a routerLink="/profile/{{basicAuthenticationService.getAuthenticatedUser()}}" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Profile</a></li> -->
-        </ul>
-
-        <ul class="navbar-nav navbar-collapse justify-content-end">
-            <li><a routerLink="/register" class="nav-link" *ngIf="!basicAuthenticationService.isUserLoggedIn()">Register</a></li>
-            <li><a routerLink="/login" class="nav-link" *ngIf="!basicAuthenticationService.isUserLoggedIn()">Login</a></li>
-            <li><a routerLink="/logout" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Logout</a></li>
-        </ul>
+        
+        <div class="nav-menu" [ngClass]="{ 'active' : burger_active == true }">
+            <ul class="navbar-nav nav-list">
+                <li><a routerLink="/dashboard/{{basicAuthenticationService.getAuthenticatedUser()}}" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Dashboard</a></li>
+                <li><a routerLink="/todos" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Todos</a></li>
+                <!-- <li><a routerLink="/profile/{{basicAuthenticationService.getAuthenticatedUser()}}" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Profile</a></li> -->
+            </ul>
+    
+            <ul class="navbar-nav navbar-collapse justify-content-end nav-list">
+                <li><a routerLink="/register" class="nav-link" *ngIf="!basicAuthenticationService.isUserLoggedIn()">Register</a></li>
+                <li><a routerLink="/login" class="nav-link" *ngIf="!basicAuthenticationService.isUserLoggedIn()">Login</a></li>
+                <li><a routerLink="/logout" class="nav-link" *ngIf="basicAuthenticationService.isUserLoggedIn()">Logout</a></li>
+            </ul>
+        </div>
+        
+        <div class="burger-menu" [ngClass]="{ 'active' : burger_active == true }" (click)="toggleBurger()">
+            <div class="bar bar__top"></div>
+            <div class="bar bar__mid"></div>
+            <div class="bar bar__bottom"></div>
+        </div>
     </nav>
 </header>
 

@@ -13,9 +13,15 @@ export class MenuComponent implements OnInit {
 
   BASE_URL = environment.BASE_URL;
 
+  burger_active: boolean = false;
+
   constructor(public basicAuthenticationService:BasicAuthenticationService) { }
 
   ngOnInit(): void {
+  }
+
+  toggleBurger() {
+    this.burger_active = !this.burger_active;
   }
 
 }
