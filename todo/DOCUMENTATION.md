@@ -147,6 +147,14 @@ spring.h2.console.enabled=true -> to view on console db info
 1. Open restful-web-services as maven project in eclipse ide
 2. Right click RestfulWebServicesApplication.java file and run as java application
 
+If error (parent pom):
+1. Ensure java version is 8 (window > preferences > maven > java configurator to set)
+2. Right click application, run as maven build then run as maven install
+
+If error (application.properties not found):
+1. Right click application > build path > java build path
+2. edit the excluded(**) to none by removing it
+
 ##################################################################
 
 ## VERSIONS ##
