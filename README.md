@@ -1,4 +1,4 @@
-# DoLiaoMa Todo Web 
+# Practice Fullstack Angular & Spring Boot
 A basic todo web application using Frontend : Angular, Backend : Spring Boot, JPA, and Hibernate, DB : H2
 
 # VERSIONING 
